@@ -1,0 +1,9 @@
+# 회전 각도(˚)
+rotate: 10
+# 이미지 크기(%)
+scale: 115
+# 이미지의 주소나 파일명
+images:
+  - https://shop-phinf.pstatic.net/20230613_111/1686655841534a59qe_JPEG/12772255282611056_501689169.jpg?type=m510
+  - https://shop-phinf.pstatic.net/20231116_130/1700111328113u6R8w_JPEG/1771146799545046_2040956388.jpg?type=m510
+  - filename.jpg
