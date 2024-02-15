@@ -4,6 +4,7 @@ import yaml
 import os
 import numpy as np
 import pandas as pd
+import ctypes
 
 with open("config.yaml", "r", encoding="utf8") as file:
     config = yaml.safe_load(file)
@@ -43,7 +44,11 @@ for i, row in df.iterrows():
     try:
         img = Image.open(urlopen(url))
     except:
-        img = Image.open(url)
+        WS_EX_TOPMOST = 0x40000
+        windowTitle = "에러"
+        message = f"{row[config['filename']]}의 이미지를 불러올 수 없습니다."
+        ctypes.windll.user32.MessageBoxExW(None, message, windowTitle, WS_EX_TOPMOST)
+        continue
 
     img = img.rotate(config["rotate"], resample=Image.BICUBIC)
     size = img.size
